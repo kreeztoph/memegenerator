@@ -74,8 +74,11 @@ class _JokesControlState extends State<JokesControl> {
         Row(
           children: [
             Expanded(
-                child: ElevatedButton(
-                    onPressed: () {}, child: Text('Get a Joke'))),
+              child: ElevatedButton(
+                onPressed: () => dispatchJokes(context),
+                child: Text('Get a Joke'),
+              ),
+            ),
           ],
         )
       ],
@@ -83,6 +86,6 @@ class _JokesControlState extends State<JokesControl> {
   }
 }
 
-// void dispatchJokes(BuildContext context) {
-//   BlocProvider.of<JokesCubit>(context).
-// }
+void dispatchJokes(BuildContext context) {
+  BlocProvider.of<JokesCubit>(context).getJokesRandomly();
+}

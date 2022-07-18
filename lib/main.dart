@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme:
             ColorScheme.fromSwatch().copyWith(secondary: Colors.blue.shade500),
       ),
-      home: JokesPage(),
+      home: const JokesPage(),
     );
   }
 }
