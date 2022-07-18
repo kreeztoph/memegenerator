@@ -15,7 +15,7 @@ const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 class JokesCubit extends Cubit<JokesState> {
   final GetJokes getJokes;
 
-  JokesCubit(this.getJokes) : super(JokesInitial());
+  JokesCubit({required this.getJokes}) : super(JokesInitial());
 
   Future<void> getJokesRandomly() async {
     emit(JokesLoading());

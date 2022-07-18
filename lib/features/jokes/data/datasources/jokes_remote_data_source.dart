@@ -13,7 +13,7 @@ abstract class JokesRemoteDataSource {
 class JokesRemoteDataSourceImpl implements JokesRemoteDataSource {
   final http.Client client;
 
-  JokesRemoteDataSourceImpl(this.client);
+  JokesRemoteDataSourceImpl({required this.client});
 
   @override
   Future<JokesModel> getJokes() =>
