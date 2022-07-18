@@ -28,10 +28,10 @@ class JokesRepositoryImpl extends JokesRepository {
     });
   }
 
-  Future<Either<Failure, Jokes>> _getJokes(_JokesPicking getjokes) async {
+  Future<Either<Failure, Jokes>> _getJokes(_JokesPicking gettingjokes) async {
     if (await networkInfo.isDeviceConnected) {
       try {
-        final remotejoke = await getjokes();
+        final remotejoke = await gettingjokes();
         localDataSources.cacheJoke;
         return Right(remotejoke);
       } on ServerException {
