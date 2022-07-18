@@ -3,6 +3,7 @@ import 'package:memegenerator/features/jokes/presentation/pages/jokes_page.dart'
 import 'injection_container.dart' as di;
 
 Future<void> main() async {
+  await WidgetsFlutterBinding.ensureInitialized();
   await di.init();
   runApp(MyApp());
 }
