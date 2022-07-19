@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:convert';
 
 import 'package:memegenerator/features/core/error/exception.dart';
@@ -7,7 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 abstract class JokesLocalDataSources {
   Future<JokesModel> getLastJoke();
 
-  Future<void> cacheJoke(JokesModel jokeToCahce);
+  Future<void> cacheJoke(JokesModel jokeToCache);
 }
 
 const CACHED_JOKES = 'CACHED JOKES';
@@ -18,11 +20,11 @@ class JokesLocalDataSourceImpl implements JokesLocalDataSources {
   JokesLocalDataSourceImpl({required this.sharedPreferences});
 
   @override
-  Future<void> cacheJoke(JokesModel jokeToCahce) {
+  Future<void> cacheJoke(JokesModel jokeToCache) {
     return sharedPreferences.setString(
         CACHED_JOKES,
         json.encode(
-          jokeToCahce.toJson(),
+          jokeToCache.toJson(),
         ));
   }
 
